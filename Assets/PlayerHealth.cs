@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int hp = 100;
     public int maxHP = 100;
+    public GameObject gameOverText;
     public TextMeshProUGUI hpText; 
     public RectTransform hpBarFill; 
     private float maxBarWidth;
@@ -17,9 +18,15 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     { hp -= damage; hp = Mathf.Clamp(hp, 0, maxHP);
         UpdateHPUI();
-        Debug.Log("プレイヤーHP：" + hp); if (hp == 0) 
+        Debug.Log("プレイヤーHP：" + hp); 
+        if (hp == 0) 
         {
             Debug.Log("ゲームオーバー！");
+
+            if (gameOverText != null)
+            {
+                gameOverText.SetActive(true);
+            }
         }
     } 
     void UpdateHPUI() 
