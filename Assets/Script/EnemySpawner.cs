@@ -35,10 +35,22 @@ public class EnemySpawner : MonoBehaviour
 
         spawnPosition.y = 1f;
 
+        // ƒvƒŒƒCƒ„[‚Ì•ûŒü‚ğŒü‚©‚¹‚é
+        Vector3 lookDirection = player.position - spawnPosition;
+        lookDirection.y = 0f;
+
+        Quaternion enemyRotation = Quaternion.identity;
+
+        if (lookDirection.sqrMagnitude > 0.01f)
+        {
+            enemyRotation = Quaternion.LookRotation(lookDirection);
+        }
+
+        // “G‚ğ¢Š«
         GameObject newEnemy = Instantiate(
             enemyPrefab,
             spawnPosition,
-            Quaternion.identity
+            enemyRotation
         );
 
         Enemy enemyScript = newEnemy.GetComponent<Enemy>();

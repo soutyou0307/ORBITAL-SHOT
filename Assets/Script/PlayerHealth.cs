@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour 
 {
     public int hp = 100;
@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
             {
                 gameOverText.SetActive(true);
             }
+            ResultManager.isClear = false;
+            SceneManager.LoadScene("Result");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     } 
     void UpdateHPUI() 
