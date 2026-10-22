@@ -464,8 +464,8 @@ GameObject:
   - component: {fileID: 988615833649194212}
   - component: {fileID: 7924403913571487772}
   - component: {fileID: 753775419917118702}
-  - component: {fileID: 1500704146944431310}
   - component: {fileID: 5967844612179770982}
+  - component: {fileID: 8350807954962127697}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -546,8 +546,27 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1500704146944431310
-BoxCollider:
+--- !u!114 &5967844612179770982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777084161872245623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b907f096991b561448aad9a92baf48e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  player: {fileID: 0}
+  speed: 2
+  damage: 10
+  maxHP: 100
+  bulletDamage: 25
+  attackDistance: 1.5
+  attackInterval: 1
+--- !u!135 &8350807954962127697
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -565,25 +584,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5967844612179770982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777084161872245623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b907f096991b561448aad9a92baf48e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  player: {fileID: 0}
-  speed: 2
-  damage: 10
-  attackDistance: 1.5
-  attackInterval: 1
 --- !u!1 &7555575244109911596
 GameObject:
   m_ObjectHideFlags: 0

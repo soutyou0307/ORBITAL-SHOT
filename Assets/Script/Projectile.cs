@@ -3,6 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float lifeTime = 5f;
+    private bool hasHit = false;
 
     void Start()
     {
@@ -11,8 +12,17 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (hasHit) return;
+
+        Enemy enemy =
+            collision.collider.GetComponentInParent<Enemy>();
+
+        if (enemy != null)
         {
+            hasHit = true;
+
+            enemy.TakeDamage(enemy.bulletDamage);
+
             Destroy(gameObject);
         }
     }
