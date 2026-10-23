@@ -5,18 +5,20 @@ using TMPro;
 public class ResultManager : MonoBehaviour
 {
     public TextMeshProUGUI resultTitle;
+    public TextMeshProUGUI finalScoreText;
 
     public static bool isClear = false;
 
     void Start()
     {
         if (isClear)
-        {
             resultTitle.text = "GAME CLEAR";
-        }
         else
-        {
             resultTitle.text = "GAME OVER";
+
+        if (finalScoreText != null)
+        {
+            finalScoreText.text = "FINAL SCORE : " + GameManager.score;
         }
     }
 
