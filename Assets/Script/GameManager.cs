@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour
         Debug.Log("スコア：" + score);
 
         UpdateScoreUI();
-
+        /*
         if (killCount >= clearKillCount)
         {
             isGameEnded = true;
             ResultManager.isClear = true;
             SceneManager.LoadScene("Result");
-        }
+        }*/
     }
 
     void UpdateScoreUI()
